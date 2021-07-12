@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code Need</title>
+        <meta name="Description" content="Tree data structure in multiple programming languages">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="icon" href="../favicon.png">
+    </head>
+    <body>
+        <header class="mainheader"> 
+            <h1 class="sitename">Code Need</h1>
+            <nav class="main-nav">
+                <ul>   
+                    <li><a class="navbtn" href="../index.html">HOME</a></li>
+                    <li><a class="navbtn" href="main.html">Other data structures</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="explanation">
+            <h2 class="section-header">AVL Tree</h2>
+            <br>
+            This tutorial requires the knowledge of <a href="bin_tree.html">binary search tree</a>.<br>
+            We recommend to go through it before proceeding.
+            <ul>
+                <li>AVL Tree (Adelson, Velski & Landis tree) is a <a href="bin_tree.html">binary search tree</a> 
+                with a height attribute in each node of the tree.</li>
+                <li>
+                    The height of a node is calculated as,<br>
+                    height(node) = max(height(node.left), height(node.right)) + 1.
+                    <br>
+                    If the node has no child then conventionally it is assigned a height of 0.
+                </li>
+                <li>
+                    For an AVL tree at any node the difference between the heights of left and right child is at most 1.
+                </li>
+                <li>By the above constraint the depth (max distance to the leaf from root) is O(log<sub>2</sub>n).</li>
+            </ul>
+            <h3>Functions</h3>
+            <ul>
+                <li>
+                    add(Data)
+                    <ul>
+                        <li>Similar to binary tree traverse the tree untill null ponter is reached.</li>
+                        <li>Make a new node with Data update the height of all the nodes int the from leaf to root.</li>
+                        <li>While updating check at each node the height balance property 
+                            (difference of heights of children is greater than 1)
+                        </li>
+                        <li>If such a node is encountered we need to perform rearrangement of nodes there.</li>
+                        <li>
+                            There can be four cases of rearrangement as follows:
+                            <ol>
+                                z - The node of height of imbalance. <br>
+                                y - child of z with greater height. <br>
+                                x - child of y with greater height.
+                                <li>
+                                    Right rotation <br>
+                                    <img src="pics/rr.png" style="width: 40em;" alt="image not found">
+                                </li>
+                                <li>
+                                    Left rotation <br>
+                                    <img src="pics/lr.png" style="width: 40em;" alt="image not found">
+                                </li>
+                                <li>
+                                    Double rotation (left, right) <br>
+                                    <img src="pics/lrr.png" style="width: 40em;" alt="image not found">
+                                </li>
+                                <li>
+                                    Double rotation (right, left) <br>
+                                    <img src="pics/rlr.png" style="width: 40em;" alt="image not found">
+                                </li>
+                            </ol>
+                        </li>
+                        <li>Increment the size of the tree.</li>
+                    </ul>
+                </li>
+                <li>
+                    Find(Data)
+                    <ul>
+                        Returns the node object which has same data as the parameter.<br>
+                        null is it does not exist.
+                        <li>Compare the data with the current node data, if data is smaller move left, else move right.</li>
+                        <li>Once we find a node data equal to Data return that node.</li>
+                        <li>If a null pointer is reached, then the Data does not exist return null.</li>
+                    </ul>
+                </li>
+                <li>
+                    remove(Data)
+                    <ul>
+                        Removes the first occurence (closest to the root) of the data, returns boolean.
+                        <li>Find the node containing Data.</li>
+                        <li>There can be four cases for the node.
+                            <ul>
+                                <li>Node with one child towars left<br>
+                                    Then, replace the Data node with the child at left. 
+                                </li>
+                                <li>Node with one child towars right<br>
+                                    Then, replace the Data node with the child at right.
+                                </li>
+                                <li>Node with no child<br>
+                                    Then, just make the node null.
+                                </li>
+                                <li>Node with both children<br>
+                                    Then, replace the data attribute with that of the successor (data just great than current node) 
+                                    or predecessor. Delete the successor or predecessor node.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            After deletion the height of nodes in the path (current node to root) will have to be updated.
+                        </li>
+                        <li>
+                            This may lead to a height imbalance, we will have to perform rotation at the imbalanced node.
+                        </li>
+                        <li>There can be four cases as follows:
+                            <ol>
+                                z - The node of height of imbalance. <br>
+                                y - child of z with greater height. <br>
+                                x - child of y with greater height.
+                                <li>
+                                    Right rotation <br>
+                                    <img src="pics/drr.png" style="width: 40em;" alt="image not found">
+                                </li>
+                                <li>
+                                    Left rotation <br>
+                                    <img src="pics/dlr.png" style="width: 40em;" alt="image not found">
+                                </li>
+                                <li>
+                                    Double rotation (left, right) <br>
+                                    <img src="pics/dlrr.png" style="width: 40em;" alt="image not found">
+                                </li>
+                                <li>
+                                    Double rotation (right, left) <br>
+                                    <img src="pics/drlr.png" style="width: 40em;" alt="image not found">
+                                </li>
+                            </ol>
+                        </li>
+                        <li>We might have to do rotation at multiple nodes in the path.</li>
+                        <li>Decrement the size attribute of the tree, return true.</li>
+                        <li>If the Data does not exist then return false.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>Example</h4>
+            Equal data are usually not allowed but in 
+            this example we have put it towards the right child (can be either side).
+            <h4>AVL tree code</h4>
+            <ul class="code-links">
+                <li><a href="python/AVLT.py" download>Python</a></li>
+                <li><a href="java/AVLT.java" download>Java</a></li>
+            </ul>
+        </section>
+    </body>
+</html>

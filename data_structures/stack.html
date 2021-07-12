@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code Need</title>
+        <meta name="Description" content="singly linked list data structure in multiple programming languages">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="icon" href="../favicon.png">
+    </head>
+    <body>
+        <header class="mainheader"> 
+            <h1 class="sitename">Code Need</h1>
+            <nav class="main-nav">
+                <ul>   
+                    <li><a class="navbtn" href="../index.html">HOME</a></li>
+                    <li><a class="navbtn" href="main.html">Other data structures</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="explanation">
+            <h2 class="section-header">Stack</h2>
+            <ul>
+                <li>It is a linear data structure made from chain of node objects.</li>
+                <li>Each node has two attributes data and pointer to the next node in the list.
+                </li>
+                <li>The stack object has attributes top and size of stack.</li>
+            </ul>
+            <h3>Important Functions</h3>
+            <ol>
+                <li>
+                    Push<br>
+                    Inserts the data at the top of stack.
+                    <ul>
+                        <li>Make node with Data and the next pointer pointing to the current top of the stack.</li>
+                        <li>Set the top of the stack as the new node created.</li>
+                        <li>Increment the size.</li>
+                        <img src="pics/push.png" style="width: 20em;">
+                    </ul>
+                </li>
+                <li>
+                    pop()<br>
+                    Removes the object at the top, optionally returns the data stored in it.
+                    <ul>
+                        <li>Store the data at top in a temporary variable.</li>
+                        <li>Set the top to be the next of the current top.</li>
+                        <li>Return the data.</li>
+                        <img src="pics/pop.png" style="width: 20em;">
+                    </ul>
+                </li>
+                <li>
+                    top()<br>
+                    Returns the data stored in the top of stack.
+                </li>
+                <li>
+                    size()<br>
+                    Returns the number of objects in the stack.
+                </li>
+            </ol>
+            <br>
+            <h4>Code</h4>
+            <ul class="code-links">
+                <li><a href="python/stack.py" download>Python</a></li>
+                <li><a href="java/stack.java" download>Java</a></li>
+            </ul>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code Need</title>
+        <meta name="Description" content="queue data structure in multiple programming languages">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="icon" href="../favicon.png">
+    </head>
+    <body>
+        <header class="mainheader"> 
+            <h1 class="sitename">Code Need</h1>
+            <nav class="main-nav">
+                <ul>   
+                    <li><a class="navbtn" href="../index.html">HOME</a></li>
+                    <li><a class="navbtn" href="main.html">Other data structures</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="explanation">
+            <h2 class="section-header">Queue</h2>
+            <ul>
+                <li>It is a linear data structure made from chain of node objects.<br>It is list implementing FIFO order.</li>
+                <li>Each node has three attributes data, pointer to the next node, pointer to previous node.
+                </li>
+                <li>The queue object has first and last nodes in the queue of the queue and size of the queue.</li>
+            </ul>
+            <h3>Important Functions</h3>
+            <ol>
+                <li>
+                    enqueue(data)<br>
+                    Pushes the data at the last node.
+                    <ul>
+                        <li>Make node with Data and the next pointer pointing to the last node.</li>
+                        <li>Make the previous pointer of last as the new node.</li>
+                        <li>Set the last node of the list as the new node created.</li>
+                        <li>Increment the size.</li>
+                        <img src="pics/qins.png" style="width: 30em;">
+                    </ul>
+                </li>
+                <li>
+                    dequeue()<br>
+                    Returns the data in the first node and removes the first node of the queue.
+                    <ul>
+                        <li>Store the first node in a temporary node.</li>
+                        <li>Set the first node to be the previous of first node.</li>
+                        <li>Set the next pointer to null.</li>
+                        <li>Decrement the size, return the temporary node data.</li>
+                        <img src="pics/qdel.png" style="width: 30em;">
+                    </ul>
+                </li>
+                <li>
+                    getLast()<br>
+                    return the data of the last node.
+                </li>
+                <li>
+                    getfirst()<br>
+                    return the data of the first node.
+                </li>
+            </ol>
+            <br>
+            <h4>Code</h4>
+            <ul class="code-links">
+                <li><a href="python/queue.py" download>Python</a></li>
+                <li><a href="java/queue.java" download>Java</a></li>
+            </ul>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code Need</title>
+        <meta name="Description" content="binary tree data structure in multiple programming languages">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="icon" href = "../favicon.png">
+    </head>
+    <body>
+        <header class="mainheader"> 
+            <h1 class="sitename">Code Need</h1>
+            <nav class="main-nav">
+                <ul>   
+                    <li><a class="navbtn" href="../index.html">HOME</a></li>
+                    <li><a class="navbtn" href="main.html">Other data structures</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="explanation">
+            <h2 class="section-header">Binary search tree</h2>
+            <ul>
+                <li>It is a data-structure for an object with total order (comparable).</li>
+                <li>The data is stored in a node which has pointers to parent, left child, right child.</li>
+                <li>Data smaller than the current node data are towards the left child, larger data are towards right child.</li>
+                <li>Node for a binary tree. Each box is a node object.<br>
+                    <img class="illustration" src="pics/treeNode.png" style ="width: 20em;" alt="image not found">
+                </li>
+            </ul>
+            <h4>Functions</h4>
+            <ul>
+                <li>add(Data)<br>
+                    Adds the Data into the tree structure.
+                    <ul>
+                        <li>Traverse along the tree untill a null pointer is found.</li>
+                        <li>If Data is smaller than current node data then go left, greater then go right.</li>
+                        <li>Once a null pointer is reached create a new node with Data and make the child parent relationship.</li>
+                        <li>If Data is smaller than parent then it will to the left else right.</li>
+                        <li>Increment the size attribute of the tree.</li>
+                    </ul>
+                </li>
+                <li>find(Data)
+                    <ul>
+                        Returns the node object which has same data as the parameter.<br>
+                        null is it does not exist.
+                        <li>Compare the data with the current node data, if data is smaller move left, else move right.</li>
+                        <li>Once we find a node data equal to Data return that node.</li>
+                        <li>If a null pointer is reached, then the Data does not exist return null.</li>
+                    </ul>
+                </li>
+                <li>remove(Data)
+                    <ul>
+                        Removes the first occurence (closest to the root) of the data, returns boolean.
+                        <li>Find the node containing Data.</li>
+                        <li>There can be four cases for the node.
+                            <ul>
+                                <li>Node with one child towars left<br>
+                                    Then, replace the Data node with the child at left.
+                                </li>
+                                <li>Node with one child towars right<br>
+                                    Then, replace the Data node with the child at right.
+                                   
+                                </li>
+                                <li>Node with no child<br>
+                                    Then, just make the node null.
+                                </li>
+                                <li>Node with both children<br>
+                                    Then, replace the data attribute with that of the successor (data just great than current node) 
+                                    or predecessor. Delete the successor or predecessor node.
+                                    <br><img src="pics/tc.png" style ="width: 40em;" alt="image not found">
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Decrement the size attribute of the tree, return true.</li>
+                        <li>If the Data does not exist then return false.</li>
+                    </ul>
+                </li>
+
+            </ul>
+            <h4>Example</h4>
+            Here we have given tree for int data, Can be easily replaced for other objects with total order.
+            <br>
+            Equal data are usually not allowed but in 
+            this example we have put it towards the right child (can be either side).
+            <h4>Binary tree code</h4>
+            <ul class="code-links">
+                <li><a href="python/btree.py" download>Python</a></li>
+                <li><a href="java/btree.java" download>Java</a></li>
+            </ul>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code Need</title>
+        <meta name="Description" content="heap sort in multiple programming languages,Heap sort complexity">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="icon" href="../favicon.png">
+    </head>
+    <body>
+        <header class="mainheader">
+            <h1 class="sitename">Code Need</h1>
+            <nav class="main-nav">
+                <ul>   
+                    <li><a class="navbtn" href="../index.html">HOME</a></li>
+                    <li><a class="navbtn" href="main.html">Other sorting algorithms</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="explanation">
+            <h2 class="section-header">Heap sort</h2>
+            <b>This sorting algorithm requires the knowledge of data structure Heap and binary tree.</b>
+            <ul>
+               <li>First step is to form a heap from the given list.</li>
+               <li>This is done by making the subtrees heap from bottom to up.</li>
+               <li>All leaves are heap by default.</li>
+               <li>Move upper level iteratively, if at any point, a vertex has larger element than its children
+                   then swap it with the smallest child continue swapping until both children are greater than or equal
+                   to the pointed vertex. This procedure is called Heapify.
+               </li>
+               <li>
+                   After the above procedure the subtree rooted at the vertex from which we started will be a heap.
+               </li>
+               <li>
+                   Apply Heapify to all the vertices bottom to up. Finally we will have a Heap.
+               </li>
+               <li>
+                   Once we have heap. We swap the right most leaf with the root(smallest element).
+               </li>
+               <li>
+                   Ignoring the sorted part we apply the heapify at the root vertex with unsorted list. 
+               </li>
+               <li>
+                   This leads to accumulation of smaller elements at the end. We get a reverse sorted list.
+               </li>
+               <li>
+                   If required we can obtain ascending order by reversing the list.
+               </li>
+            </ul>
+            <h3>Complexity</h3>
+            <ul>
+                <li>Making a heap is a O(n) procedure.</li>
+                <li>Because heapify is O(log<sub>2</sub>n). (In worst case you might have to swap the root
+                    till the leaf, depth of a complete tree is log<sub>2</sub>n)
+                </li>
+                <li>We apply the heapify to all elements from bottom to top. The size of the tree is variable.</li>
+                <li>Summing over the variable depth, we get O(n).</li>
+                <li>For heap sort we delete the min element O(log<sub>2</sub>n) procedure.
+                    <br>&ensp; Swap the right, bottom element with root (minimum).
+                    <br>&ensp; Apply Heapify at the root (O(log<sub>2</sub>n)).
+                </li>
+                <li>The above process is continued for n times.</li>
+                <li>Although the size of tree is variable the depth is log(n) during heapify for half of the 
+                    elements.
+                </li>
+                <li>Thus it is a O(nlog<sub>2</sub>n) (worst case)</li>
+            </ul>
+
+            <div>
+                Illustration.<br><br>
+                <img src="pics/heap.png" alt="image not found" style="width: 60em;">
+            </div>
+            <h4>Heap sort code</h4>
+            <ul class="code-links">
+                <li><a href="python/heap_sort.py" download>Python</a></li>
+                <li><a href="java/heap_sort.java" download>Java</a></li>
+                <li><a href="cpp/heap_sort.cpp" download>C++</a></li>
+            </ul>
+        </section>
+        <!--<footer class="leaf-footer">
+            <div class="container footer-container">
+                <h3 class = "Name">Comments</h3>
+            </div>
+        </footer>-->
+    </body>
+</html>

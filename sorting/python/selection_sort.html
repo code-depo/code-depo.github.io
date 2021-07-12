@@ -1,0 +1,25 @@
+<style>
+@import url("https://fonts.googleapis.com/css?family=Consolas:300,400");
+.tutCode{
+    font-family: monospace;
+    font-size: large;
+	width: 80%;
+	background-color: rgb(176, 255, 204);
+	color: rgb(65, 9, 16);
+	white-space: pre;
+}
+</style>
+
+<div class="tutCode">
+def selection_sort(List):
+    n = len(List)
+    for pointer in range(n):
+        Min = pointer
+        for i in range(pointer, n):	#find the index of smallest element
+            if(List[i] < List[Min]):
+                Min = i
+        temp = List[pointer]	#swap
+        List[pointer] = List[Min]
+        List[Min] = temp
+    return List
+</div>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code Need</title>
+        <meta name="Description" content="doubly linked list data structure in multiple programming languages">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="icon" href="../favicon.png">
+    </head>
+    <body>
+        <header class="mainheader"> 
+            <h1 class="sitename">Code Need</h1>
+            <nav class="main-nav">
+                <ul>   
+                    <li><a class="navbtn" href="../index.html">HOME</a></li>
+                    <li><a class="navbtn" href="main.html">Other data structures</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="explanation">
+            <h2 class="section-header">Doubly linked list</h2>
+            <ul>
+                <li>It is a linear data structure made from chain of node objects.</li>
+                <li>Each node has three attributes data, pointer to the next node, pointer to previous node.
+                </li>
+                <li>The doubly linked list class has two nodes head, tail of the list and size of the list.</li>
+            </ul>
+            <h3>Important Functions</h3>
+            <ol>
+                <li>
+                    insertFirst(data)<br>
+                    Inserts the data at the head of list.
+                    <ul>
+                        <li>Make node with Data and the next pointer pointing to the head of the list.</li>
+                        <li>make the previous pointer of head as the new node.</li>
+                        <li>Set the head of the list as the new node created.</li>
+                        <li>Increment the size.</li>
+                    </ul>
+                </li>
+                <li>
+                    insertLast(data)<br>
+                    Inserts the data at the tail of list.
+                    <ul>
+                        <li>Make node with data and set the previous pointer to the tail of the list.</li>
+                        <li>Make the next pointer of tail as the new node.</li>
+                        <li>Set the tail of the list as the new node created.</li>
+                        <li>Increment the size.</li>
+                    </ul>
+                </li>
+                <li>
+                    Find(Data)<br>
+                    Returns the position of node containing the Data if exists else returns -1
+                    <ul>
+                        <li>We traverse from the head linearly using the next pointer.</li>
+                        <li>If the a node containing the Data is encountered then return the index.</li>
+                        <li>If null is reached then return -1.</li>
+                    </ul>
+                </li>
+                <li>
+                    remove(data)<br>
+                    Deletes the node containing the Data.
+                    <ul>
+                        <li>Find the node containing data by linear search.</li>
+                        <li>Set the next pointer of previous node to the node next to the data node.</li>
+                        <li>Set the previous pointer of the next node to the previous of data node</li>
+                        <li>Decrement the size.</li>
+                    </ul>
+                </li>
+                <li>
+                    Insert(poisiton, data)<br>
+                    Inserts the a new node containing the data at given poisiton.
+                    <ul>
+                        <li>Throw error if index is out of bound.</li>
+                        <li>Create a new node containing data.</li>
+                        <li>If the position is less than half of size, start from the head reach the node before position.
+                            <br>Else start from the tail travel backwards.
+                        </li>
+                        <li>Change the next and previous pointers to the new node at the position.</li>
+                        <li>Increment the size.</li>
+                        <img src="pics/dllins.png" style="width: 30em;">
+                    </ul>
+                </li>
+                <li>
+                    Delete(position)<br>
+                    Delete the node at given position.
+                    <ul>
+                        <li>Throw error if index is out of bound.</li>
+                        <li>Travel to the node just before the position node from the head or tail according to the vicinity.</li>
+                        <li>Change the pointers of node after and before the node at poisiton.</li>
+                        <li>Decrement the size.</li>
+                        <img src="pics/dlldel.png" style="width: 30em;">
+                    </ul>
+                </li>
+            </ol>
+            <br>
+            <h4>Code</h4>
+            <ul class="code-links">
+                <li><a href="python/DLL.py" download>Python</a></li>
+                <li><a href="java/DLL.java" download>Java</a></li>
+            </ul>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code Need</title>
+        <meta name="Description" content="heap data structure in multiple programming languages">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="icon" href = "../favicon.png">
+    </head>
+    <body>
+        <header class="mainheader"> 
+            <h1 class="sitename">Code Need</h1>
+            <nav class="main-nav">
+                <ul>   
+                    <li><a class="navbtn" href="../index.html">HOME</a></li>
+                    <li><a class="navbtn" href="main.html">Other data structures</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="explanation">
+            <h2 class="section-header">Min Heap</h2>
+            <ul>
+                <li>Min heap is a complete binary tree with the property every parent has it's data vlaue smaller 
+                    data of both the children.
+                </li>
+                <li>
+                    Complete binary tree is a tree with every node having at max two children 
+                    and all levels except the lowest one is completely filled. Lowest level 
+                    is left filled.
+                </li>
+                <li>
+                    Interestingly the heap can be easily represented in a list format.
+                </li>
+                <li>
+                    Consider the list of data objects. Each position in the list represents a node in tree structure.
+                </li>
+                <li>The parent child relation for <b>0 indexed</b> list will be.<br>
+                    left child (list[i]) = list[2*i + 1]<br>
+                    right child (list[i]) = list[2*i + 2]<br>
+                    parent (list[i]) = list[(i - 1)/2]  note it is the integer division.<br>
+                    <img src="pics/heap.png" alt="image not found" style="width: 30em;">
+                    <br>
+                    If it 1 indexed then the relationship is <br>
+                    left child (list[i]) = list[2*i]<br>
+                    right child (list[i]) = list[2*i + 1]<br>
+                    parent (list[i]) = list[i/2]<br>
+                    We need to insert a sentinal node at index 0 to get this.
+                </li>
+                <li>In short the list is the level order traversal of the tree.</li>
+            </ul>
+            <h4>Functions</h4>
+            <ul>
+                <li>add(Data)<br>
+                    <ul>
+                        <li>Append the Data to the end of list. 
+                            <br>i.e., Put it in the leftmost empty postion in the lowest level of the tree representation.
+                        </li>
+                        <li>
+                            Check whether it's parent is greater than it.
+                        </li>
+                        <li>
+                        	Swap it with it's parent until the parent is smaller than the Data. 
+                        </li>
+                        <li>
+                        	This is a O(log<sub>2</sub>(n)) procedure. Since in worst case we need to swap it till 
+                        	root of the tree. This is a complete tree. Therefore the height is O(log(n)).
+                        </li>
+                        <video src="pics/heap_add.mp4" poster="pics/heap_add.png" autoplay controls style="height:15em;width:30em;"></video>
+                    </ul>
+                </li>
+                <li>find(Data)
+                    Since there is no order like the binary search tree. We need to <b>linear search</b> the Data in the list. 
+                    Hence a O(n) process.
+                </li>
+                <li>remove(Data)
+                    <ol>
+                    	<li>Find the Data</li>
+                    	<li>Once found replace the Data with the last element in the list.</li>
+                    	<li>Move the replaced data downwards utill both its children are not lessthan itself.
+                    		<ul>
+                    			Check both children if one or more child has data smaller than the current, then
+                    			swap the current data with the smaller of the two.
+                    		</ul>
+                    	</li>
+                    	<li>Finding the element is O(n) with very small constant factor.<br>
+                    		But deleting if the pointer is known is O(log(n)) process (proportional to the height).
+                    	</li>
+                    	<video src="pics/heap_del.mp4" poster="pics/heap_del.png" autoplay controls style="height:17em;width:30em;"></video>
+                    </ol>
+                </li>
+
+            </ul>
+            <h4>Example</h4>
+            Here we have given tree for int data, Can be easily replaced for other objects with total order.
+            <br>
+            Equal data are usually not allowed but in 
+            this example we have put it towards the right child (can be either side).
+            <h4>Binary tree code</h4>
+            <ul class="code-links">
+                <li><a href="python/heap.py" download>Python</a></li>
+                <li><a href="java/Heap.java" download>Java</a></li>
+            </ul>
+        </section>
+    </body>
+</html>

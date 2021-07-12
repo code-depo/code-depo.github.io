@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code Need</title>
+        <meta name="Description" content="singly linked list data structure in multiple programming languages">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="icon" href="../favicon.png">
+    </head>
+    <body>
+        <header class="mainheader"> 
+            <h1 class="sitename">Code Need</h1>
+            <nav class="main-nav">
+                <ul>   
+                    <li><a class="navbtn" href="../index.html">HOME</a></li>
+                    <li><a class="navbtn" href="main.html">Other data structures</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="explanation">
+            <h2 class="section-header">Singly linked list</h2>
+            <ul>
+                <li>It is a linear data structure made from chain of node objects.</li>
+                <li>Each node has two attributes data and pointer to the next node in the list.
+                    <br><img src="pics/s_node.png" style="width: 15em;">
+                </li>
+                <li>The list object has the node representing head of the list and size of list.</li>
+            </ul>
+            <h3>Important Functions</h3>
+            <ol>
+                <li>
+                    Add<br>
+                    Inserts the data at the head of singly linked list.
+                    <ul>
+                        <li>Make node with Data and the next pointer pointing to the head of the list.</li>
+                        <li>Set the head of the list as the new node created.</li>
+                        <li>Increment the size.</li>
+                    </ul>
+                </li>
+                <li>
+                    Find(Data)<br>
+                    Returns the position of node containing the Data if exists else returns -1
+                    <ul>
+                        <li>We traverse from the head linearly using the next pointer.</li>
+                        <li>If the a node containing the Data is encountered then return the index.</li>
+                        <li>If null is reached then return -1.</li>
+                    </ul>
+                </li>
+                <li>
+                    remove(Data)<br>
+                    Deletes the node containing the Data.
+                    <ul>
+                        <li>Find the node containing data by linear search.</li>
+                        <li>Set the next pointer of previous node to the node next to the Data node.</li>
+                        <li>Decrement the size.</li>
+                    </ul>
+                </li>
+                <li>
+                    Insert(poisiton, data)<br>
+                    Inserts the a new node containing the data at given poisiton.
+                    <ul>
+                        <li>Throw error if index is out of bound.</li>
+                        <li>Create a new node containing data.</li>
+                        <li>Travel using next pointers untill the node before the position of insertion is reached.</li>
+                        <li>Point the next to the node at position.</li>
+                        <li>Next of previous to the new node.</li>
+                        <li>Increment the size.</li>
+                        <img src="pics/sllins.png" style="width: 30em;">
+                    </ul>
+                </li>
+                <li>
+                    Delete(position)<br>
+                    Delete the node at given position.
+                    <ul>
+                        <li>Throw error if index is out of bound.</li>
+                        <li>Travel to the node just before the position node.</li>
+                        <li>point the next pointer of it to the node next the poisition node.</li>
+                        <li>Declare the position node as null. Though not necessary, since it will be 
+                            collected by garbage collector (does not have any pointer to it).
+                        </li>
+                        <li>Decrement the size.</li>
+                        <img src="pics/slldel.png" style="width: 30em;">
+                    </ul>
+                </li>
+                <li>
+                    get(i)<br>
+                    Returns the data in the ith node.
+                    <ul>
+                        <li>Throw error if index out of bound.</li>
+                        <li>Travel from head till the ith node, return node data.</li>
+                    </ul>
+                </li>
+            </ol>
+            <br>
+            <h4>Code</h4>
+            <ul class="code-links">
+                <li><a href="python" download>Python</a></li>
+                <li><a href="java/SLL.java" download>Java</a></li>
+            </ul>
+        </section>
+    </body>
+</html>
